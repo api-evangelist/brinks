@@ -1,7 +1,13 @@
 aid: brinks
-url: https://raw.githubusercontent.com/api-evangelist/brinks/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/brinks/refs/heads/main/apis.yml
 modified: '2026-03-23'
 apis: []
 common:
   - type: Website
     url: https://www.brinks.com
+description: >-
+  Brink’s provides secure cash management solutions, ATM services, and financial security
+  innovations to businesses nationwide. Optimize operations, enhance security, and
+  streamline cash handling with Brink’s industry-leading expertise. Visit us.brinks.com
+  to learn more.
