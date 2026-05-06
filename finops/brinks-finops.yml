@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,10 +9,11 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Brinks
 providerId: brinks
-publisherName: Brinks
-serviceCategory: API
+publisherName: The Brink's Company
+serviceCategory: Cash Management & Logistics
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Cash Management
   - Security
@@ -19,114 +21,72 @@ tags:
   - Financial Services
   - Armored Transport
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Brinks API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+description: 'FOCUS-aligned FinOps for Brink''s: bundled commercial contract covering 24SEVEN ACCESS
+  portal, Armored Account, RetailBox, and Brink''s Money paycard services with armored logistics and
+  hardware. Software and API access are not separately metered; spend is dominated by per-pickup and
+  per-location service fees set in the master services agreement.'
+sources:
+  - https://www.brinks.com/
+notes: API access is included with contracted cash management services; no public per-API price.
 billingModel:
-  pricingCategory: Usage-Based
+  pricingCategory: Service Contract
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
+    - Usage
     - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
-  ServiceName: Brinks
-  ServiceCategory: Developer Tools / API
-  ProviderName: Brinks
-  PublisherName: Brinks
-  InvoiceIssuerName: Brinks
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  ServiceName: Brink's
+  ServiceCategory: Cash Management & Logistics
+  ProviderName: Brink's
+  PublisherName: The Brink's Company
+  InvoiceIssuerName: The Brink's Company
   BillingCurrency: USD
-  ChargeCategory: Usage
+  PricingCategory: Other
+  PricingUnit: service-contract
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: service_contract_month
+    description: Monthly contracted service fee covering portal access, software, and base logistics.
+    unit: month
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+      - location
+      - product_line
+  - name: pickups
+    description: Armored pickup events per location.
+    unit: event
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+      - location
+      - frequency_band
+  - name: deposits_processed
+    description: Cash deposits processed through 24SEVEN ACCESS / Armored Account.
+    unit: deposit
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Brink's 24SEVEN ACCESS Portal
-    baseURL: ''
-    tags:
-      - Cash Management
-      - Customer Portal
-      - Operations
-    serviceName: Brink's 24SEVEN ACCESS Portal
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - location
+  - name: paycard_loads
+    description: Brink's Money paycard loads.
+    unit: load
+    aggregation: sum
+    dimensions:
+      - employer
+principles:
+  - name: Visibility
+    description: Use 24SEVEN ACCESS to track deposits, pickups, and change orders by location; reconcile
+      against monthly invoices and the master services agreement.
+  - name: Allocation
+    description: Allocate cash management spend by store / location to product lines, regions, or business
+      units that own the cash flow.
+  - name: Optimization
+    description: Tune pickup frequency to actual deposit volume per location, consolidate stops where
+      geography allows, and renegotiate volume-based discounts at renewal.
+  - name: Accountability
+    description: Designate a treasury / store-operations owner for the Brink's relationship; review pickup
+      frequency, dispute discrepancies, and forecast contract renewals against retail growth plans.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
