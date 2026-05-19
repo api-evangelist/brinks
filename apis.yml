@@ -39,6 +39,10 @@ apis:
       Brink's cash management services including tracking cash deposits, ordering
       change, and monitoring operations through mobile devices and desktop interfaces.
 common:
+  - type: GitHubOrganization
+    url: https://github.com/LiveWatch
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/brinks
   - type: Website
     url: https://us.brinks.com
   - type: CustomerPortal
