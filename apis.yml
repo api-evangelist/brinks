@@ -5,6 +5,12 @@ tags:
   - Cash Management
   - Security
   - ATM Services
+  - Financial-Services
+  - Armored Transport
+tags_raw:
+  - Cash Management
+  - Security
+  - ATM Services
   - Financial Services
   - Armored Transport
 type: Index
@@ -39,6 +45,9 @@ apis:
   - aid: brinks:customer-portal-api
     name: Brink's 24SEVEN ACCESS Portal
     tags:
+      - Cash Management
+      - Customer Portal
+    tags_raw:
       - Cash Management
       - Customer Portal
       - Operations
