@@ -4,10 +4,10 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Brinks
 providerId: brinks
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
+generated: '2026-09-04'
+method: searched
+source: https://blubeempayments.com/the-basics/pricing
+modified: '2026-09-04'
 reconciled: false
 tags:
   - Cash Management
@@ -15,21 +15,65 @@ tags:
   - ATM Services
   - Financial Services
   - Armored Transport
-description: Brink's is a B2B cash management and armored transport provider. Its 24SEVEN ACCESS digital
-  portal, Brink's Armored Account, RetailBox, and Brink's Money services are sold under bilateral commercial
-  contracts that bundle hardware, software, and logistics services. There is no public, self-service
-  API price list; pricing is custom-quoted per customer based on locations, pickup frequency, and cash
-  volume.
+description: >-
+  Brink's sells cash management, armored transport, ATM and vault services under bilateral commercial
+  contracts, and publishes no price for any of them — every Brink's Complete, 24SEVEN, RetailBox and
+  Brink's Global Services page routes to "Get a Quote". The one exception found on 2026-09-04 is
+  BLUbeem by Brink's, the company's digital cash payment product for small merchants (distributed via
+  the Clover and Square app markets), which publishes a real headline price on its own site. There is
+  no API price of any kind, because Brink's publishes no API.
+plan_count: 2
+currency: USD
 sources:
-  - https://www.brinks.com/
-notes: No public API price list. All pricing is contracted on a per-customer basis with hardware, logistics,
-  and software bundled. Reconcile against the customer's master services agreement.
+  - https://blubeempayments.com/the-basics/pricing
+  - https://us.brinks.com/get-a-quote
+  - https://us.brinks.com/total-cash-management
+notes: >-
+  The BLUbeem figures are transcribed verbatim from the provider's own pricing page, which labels the
+  displayed values estimates and adds "Minimums Apply" without stating the minimum. The enterprise
+  entry is a description of the commercial motion, not a published price — Brink's states no number
+  for it anywhere public. Reconcile the enterprise line against the customer's master services
+  agreement.
 plans:
+  - id: blubeem
+    name: BLUbeem by Brink's
+    type: published
+    method: searched
+    source: https://blubeempayments.com/the-basics/pricing
+    price: 99
+    currency: USD
+    period: month
+    price_note: '$99 fixed monthly fee'
+    overage: 0.99% fee based on cash volume
+    included_quota: not stated
+    limits:
+      minimums: 'stated as "Minimums Apply"; the minimum itself is not published'
+    caveat: >-
+      The provider labels the displayed values estimates and directs buyers to "Connect with us" for
+      detailed pricing.
+    description: >-
+      Digital cash payment and reconciliation for merchants, with next-business-day settlement on
+      cash deposits, smart safe hardware, a mobile analytics app and point-of-sale integration.
+      Distributed through the Clover and Square app markets.
+    elements:
+      - name: Cash digitization / smart safe deposit
+      - name: Next-business-day settlement
+      - name: BLUbeem mobile app (analytics + reconciliation)
+      - name: Clover / Square POS integration
+      - name: Change delivery
   - id: brinks-enterprise
     name: Enterprise / Contracted Service
     type: enterprise
-    description: Custom commercial agreement covering 24SEVEN ACCESS portal, Armored Account, RetailBox,
-      Brink's Money paycard, and supporting APIs. Pricing is bundled with cash logistics and hardware.
+    method: derived
+    source: https://us.brinks.com/get-a-quote
+    price: contact sales
+    currency: USD
+    period: contract
+    description: >-
+      Custom commercial agreement covering 24SEVEN ACCESS portal access, Brink's Armored Account,
+      RetailBox, Brink's Money paycard, cash-in-transit and vault services. Pricing is bundled with
+      logistics and hardware and is quoted per customer on locations, pickup frequency and cash
+      volume. Brink's publishes no figure for any of it.
     entries:
       - label: Service contract
         name: service_contract
@@ -50,16 +94,6 @@ plans:
         geo: configurable
         unit: 1
         price: see services agreement
-        userMultiplied: false
-      - label: API access
-        name: api_access
-        type: quota
-        metric: request
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        unit: 1
-        price: included with services
         userMultiplied: false
     elements:
       - name: 24SEVEN ACCESS Portal

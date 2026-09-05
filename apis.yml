@@ -41,7 +41,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/brinks.png
 access: 3rd-Party
 created: '2026-03-23'
-modified: '2026-04-21'
+modified: '2026-09-04'
 position: Consuming
 description: >-
   Brink's is a global leader in secure cash management, armored transport, ATM
@@ -74,7 +74,7 @@ common:
   - type: DomainSecurity
     url: security/brinks-domain-security.yml
   - type: GitHubOrganization
-    url: https://github.com/LiveWatch
+    url: https://github.com/brinks-incorporated
   - type: LinkedIn
     url: https://www.linkedin.com/company/brinks
   - type: Website
@@ -83,7 +83,50 @@ common:
     url: https://customerportal.brinksinc.com
   - type: InvestorRelations
     url: https://investors.brinks.com
+  - type: Plans
+    url: plans/brinks-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/brinks-rate-limits.yml
+  - type: LLMsTxt
+    url: llms/brinks-llms.txt
+  - type: Pricing
+    url: https://blubeempayments.com/the-basics/pricing
+  - type: PrivacyPolicy
+    url: https://us.brinks.com/privacy-policy
+  - type: TermsOfService
+    url: https://us.brinks.com/terms-of-use
+  - type: Support
+    url: https://us.brinks.com/contact
+  - type: Blog
+    url: https://us.brinks.com/insights
+  - type: Login
+    url: https://us.brinks.com/login
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.23'
+
+x-enrichment:
+  date: '2026-09-04'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Brink's ships customer software - the 24SEVEN portal and app, BLUbeem, the BGS tracking portal -
+    but runs no developer programme at all: eleven Brink's hosts returned 404 on every /.well-known/
+    path and every spec path, and all nine Brink's GitHub organizations carry zero public repositories.
+  evidence:
+    - url: https://us.brinks.com/openapi.json
+      status: 404
+    - url: https://us.brinks.com/.well-known/api-catalog
+      status: 404
+    - url: https://customerportal.brinksinc.com/o/headless-delivery/v1.0/openapi.json
+      status: 403
+    - url: https://blubeempayments.com/.well-known/security.txt
+      status: 404
+    - url: https://api.github.com/orgs/brinks-incorporated
+      status: 200
+  checked: '2026-09-04'

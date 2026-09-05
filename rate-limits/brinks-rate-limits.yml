@@ -4,10 +4,10 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Brinks
 providerId: brinks
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
+generated: '2026-09-04'
+method: searched
+source: https://us.brinks.com/
+modified: '2026-09-04'
 reconciled: false
 tags:
   - Cash Management
@@ -15,31 +15,29 @@ tags:
   - ATM Services
   - Financial Services
   - Rate Limiting
-description: Brink's does not publish API rate limits on a public developer portal. Access to the 24SEVEN
-  ACCESS portal and supporting APIs is granted to contracted customers and integration partners; rate-limit
-  terms are conveyed in the service agreement and technical onboarding documents.
+description: >-
+  Brink's publishes no API rate limits anywhere on its public surface. The 2026-09-04 enrichment
+  pass searched us.brinks.com (143 sitemap URLs), brinkscompleteus.com, brinksglobal.com,
+  blubeempayments.com and the 24SEVEN customer portal at customerportal.brinksinc.com and found no
+  developer documentation of any kind — no rate-limit table, no throttling policy, and no documented
+  response headers. There is no public API to rate-limit.
+limit_count: 0
+limits: []
+responseCodes: {}
+policies: []
 sources:
-  - https://www.brinks.com/
-notes: Rate limits are not publicly published; values are partner / contract specific.
-responseCodes:
-  throttled: 429
-  serviceUnavailable: 503
-limits:
-  - name: 24SEVEN ACCESS / contracted APIs
-    scope: contract
-    metric: varies
-    limit: 'see contract / onboarding documentation'
-    notes: Per-customer values bound to the master services agreement.
-policies:
-  - name: Backoff Strategy
-    description: Apply exponential backoff with jitter on 429 / 503 responses; honor Retry-After when
-      present.
-  - name: Contract-Bound Capacity
-    description: Effective request capacity is set by the customer contract and partner onboarding documents,
-      not via a public tier page.
-  - name: Fair Use
-    description: Sustained traffic that materially impacts shared infrastructure may trigger throttling
-      regardless of contract.
+  - https://us.brinks.com/
+  - https://us.brinks.com/sitemap.xml
+  - https://blubeempayments.com/
+  - https://customerportal.brinksinc.com/
+notes: >-
+  HONEST ZERO, corrected 2026-09-04. The previous version of this file carried one placeholder
+  `limits[]` entry reading "see contract / onboarding documentation" plus invented 429/503 response
+  codes, written by the 2026-05-04 bulk sweep. That placeholder made limit_count resolve to 1, so a
+  provider that documents nothing was scored as documenting a limit. Nothing published by Brink's
+  states a limit, a window, a burst, or a Retry-After header, so limit_count is 0. If Brink's ever
+  opens a partner API programme, re-run this step against its reference.
+checked: '2026-09-04'
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com

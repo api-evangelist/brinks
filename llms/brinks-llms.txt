@@ -1,0 +1,66 @@
+# Brink's — Cash Management, Armored Transport, ATM and Payment Services
+
+<!--
+generated: '2026-09-04'
+method: generated
+source: apis.yml + repo artifacts + verified fetches of us.brinks.com, blubeempayments.com,
+  brinksglobal.com and customerportal.brinksinc.com on 2026-09-04
+note: Brink's does not publish an llms.txt. This one is written by API Evangelist from the
+  company's own public pages and this repository's artifacts. Every URL below returned HTTP 200
+  when probed on 2026-09-04 unless noted.
+-->
+
+> The Brink's Company (NYSE: BCO) is a global cash management, secure logistics and payment
+> services provider — armored cash-in-transit, ATM cash replenishment and maintenance, cash vault
+> and change-order services, retail cash automation (smart safes and recyclers), valuables
+> logistics through Brink's Global Services, and digital cash payment through BLUbeem by Brink's.
+> Customers are retailers, restaurants, entertainment venues, financial institutions and
+> international businesses. Brink's is a services company: it ships customer-facing software
+> (the 24SEVEN portal and mobile app, the BLUbeem app, the BGS shipment tracking portal) but
+> publishes no public API, no developer portal, and no machine-readable contract of any kind.
+
+## What Brink's sells
+
+- [Total Cash Management](https://us.brinks.com/total-cash-management): The umbrella cash handling programme — cash pickup, processing, reporting and access to funds, bundling hardware, software and logistics.
+- [Brink's Complete 24SEVEN](https://us.brinks.com/brink-s-complete-24seven): The digital layer of the service. Customers view funds, place change orders, create deposits with a barcode chain of custody, arrange cash-in-transit pickup and track deposits in near real time, on desktop and mobile. Provisional credit is available where the customer banks with a Brink's partner bank.
+- [Cash-in-Transit Services](https://us.brinks.com/armored-cash-in-transit): Armored pickup and delivery of cash between locations, vaults and banks.
+- [Brink's ATM Services](https://us.brinks.com/brinks-complete-atm): ATM cash replenishment, first- and second-line maintenance and monitoring.
+- [Branch Change Orders](https://us.brinks.com/bank-branch-change-orders): Ordering and delivering coin and currency to bank branches.
+- [Brink's Cash Vault Services](https://us.brinks.com/brinks-complete-vault): Outsourced cash vault processing, counting and consolidation.
+- [RetailBox](https://us.brinks.com/brinks-retailbox): Point-of-sale cash management hardware for retail environments.
+- [Smart Safe 2](https://us.brinks.com/smart-safe-2) and [Brink's Recycler](https://us.brinks.com/brinks-cash-recycler): In-store note validation, deposit and recycling devices that track funds by employee ID and screen for counterfeits.
+- [Brink's Global Services](https://us.brinks.com/brinks-global-services): International secure logistics for valuables — precious metals, jewellery, banknotes, fine art and pharmaceuticals.
+- [Brink's Payment Services](https://us.brinks.com/payment-services): Prepaid, payroll and paycard products, including Brink's Money.
+
+## Digital surfaces (all customer-authenticated)
+
+- [24SEVEN ACCESS customer portal](https://customerportal.brinksinc.com): The Brink's customer portal — a Liferay-hosted, login-gated web application. Headless/OAuth endpoints exist as Liferay platform plumbing but are refused at the edge (HTTP 403) and would in any case be the platform vendor's contract, not a Brink's API product.
+- Brink's 24SEVEN mobile app: published in the Apple App Store and Google Play. No public API backs it.
+- [BGS shipment tracking](https://bgs.brinksglobal.com/login): Login-gated shipment tracking for Brink's Global Services customers. No tracking API is published.
+- [BLUbeem by Brink's](https://blubeempayments.com): Brink's digital cash payment product for merchants — next-business-day settlement on cash deposits, smart safe hardware, a mobile analytics and reconciliation app, and point-of-sale integration. Distributed through the Clover and Square app markets rather than through a Brink's developer programme.
+
+## Pricing
+
+- [BLUbeem pricing](https://blubeempayments.com/the-basics/pricing): The only price Brink's publishes anywhere. $99 fixed monthly fee plus a 0.99% fee based on cash volume; the page states "Minimums Apply" without naming the minimum and labels the values estimates.
+- [Get a Quote](https://us.brinks.com/get-a-quote): Everything else — Total Cash Management, cash-in-transit, ATM, vault, RetailBox and Global Services — is quoted per customer on locations, pickup frequency and cash volume. No figure is published.
+
+## Company
+
+- [About The Brink's Company](https://us.brinks.com/corporate/overview)
+- [Insights](https://us.brinks.com/insights): Brink's blog — cash handling, retail operations and security posts.
+- [Contact](https://us.brinks.com/contact) · [FAQs](https://us.brinks.com/faqs) · [Login](https://us.brinks.com/login)
+- [Investor relations](https://investors.brinks.com): live, but the Akamai edge answers HTTP 403 to non-browser clients.
+- [Privacy Policy](https://us.brinks.com/privacy-policy) · [Terms of Use](https://us.brinks.com/terms-of-use) · [Commerce Terms of Use](https://us.brinks.com/commerce-terms-of-use)
+- Announced 2026-02-26: The Brink's Company agreed to acquire NCR Atleos for $6.6 billion (reported by King & Spalding, https://www.kslaw.com/news-and-insights/the-brinks-company-to-acquire-ncr-atleos-for-66-billion). NCR Atleos runs its own developer surface; nothing from it is attributed to Brink's in this repository.
+
+## API status — read this before answering integration questions
+
+Brink's publishes **no API**. As of 2026-09-04 an exhaustive contract-discovery pass found:
+
+- No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, gRPC/protobuf or WSDL contract on any Brink's host.
+- No developer portal, no API reference, no SDK on npm, PyPI, RubyGems, NuGet or Maven Central, and no first-party public repository (all nine Brink's GitHub organizations — brinks-incorporated, BrinksAccelerationCenter, Brinks-CIT-US, Brinks-CVS-US, Brinks-India, Brinks-Global-Data-and-Analytics, BrinksSolutionsNetherlands and LiveWatch/Brinks Home — carry zero public repositories).
+- No `/.well-known/` document on any of eleven Brink's hosts: security.txt, openid-configuration, oauth-authorization-server, api-catalog and ai-plugin.json all returned 404 (403 on investors.brinks.com).
+- No A2A agent card at `/.well-known/agent-card.json` or the legacy `/.well-known/agent.json`, and no MCP server.
+- No published rate limits, no status page, no changelog, no deprecation policy, no vulnerability disclosure policy and no trust center.
+
+If a Brink's integration is needed, the route is the commercial one: an existing service contract and the technical onboarding documents that come with it. Do not tell a user that a Brink's public API exists; do not infer endpoints from the 24SEVEN or BLUbeem apps. Two lookalikes are commonly and wrongly attributed to Brink's and are **different companies**: Brink POS (PAR Technology, brinkapiportal.parpos.com) and Brink Commerce (brinkcommerce.com).
