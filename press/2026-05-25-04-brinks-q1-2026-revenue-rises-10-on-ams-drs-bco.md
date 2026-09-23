@@ -1,7 +1,9 @@
 ---
 title: Brink's Q1 2026 revenue rises 10% on AMS/DRS - BCO
 url: https://www.stocktitan.net/sec-filings/BCO/8-k-brinks-co-reports-material-event-a8b2a30453c6.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Brink''s" press release artificial intelligence'
 position: 4
 source: serpapi-google

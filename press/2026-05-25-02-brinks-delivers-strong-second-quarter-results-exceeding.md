@@ -1,7 +1,9 @@
 ---
 title: Brink's Delivers Strong Second-Quarter Results Exceeding ...
 url: https://investors.brinks.com/news-releases/news-release-details/brinks-delivers-strong-second-quarter-results-exceeding-top-end/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Brink''s" press release artificial intelligence'
 position: 2
 source: serpapi-google
