@@ -72,6 +72,8 @@ apis:
       Brink's cash management services including tracking cash deposits, ordering
       change, and monitoring operations through mobile devices and desktop interfaces.
 common:
+  - type: FinOps
+    url: finops/brinks-finops.yml
   - type: DomainSecurity
     url: security/brinks-domain-security.yml
   - type: GitHubOrganization
