@@ -64,35 +64,107 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Brink's is a global leader in secure cash management, armored transport, ATM services, and financial security solutions. The company serves retail, restaurant, financial institution, and entertainment businesses with its Total Cash Management platform combining hardware, software, and logistics services.
+Brink's is a global leader in secure cash management, armored transport, ATM services, and financial security solutions. The company serves retail, restaurant, financial institutions, and entertainment businesses with its Total Cash Management platform, combining hardware, software, and logistics services. Brink's digital customer portal 24SEVEN ACCESS enables businesses to track cash deposits, order change, and manage operations via mobile and desktop interfaces. Additional products include the Brink's Armored Account payment processing service, Brink's Money paycard for employee payments, and RetailBox point-of-sale cash management.
 
-## Products & Services
+**Areas:** Cash Management · Security · ATM Services · Financial Services · Armored Transport
 
-### Cash Management
-- **Total Cash Management** - Subscription-based platform combining hardware, software, and armored services
-- **RetailBox** - Point-of-sale cash management for retail locations
-- **Armored Cash Transport** - Secure pickup and delivery of cash and valuables
+## Brinks on APIs.io
 
-### ATM Services
-- Managed ATM operations and maintenance
-- Vault services and cash replenishment
+Everything profiled for Brinks is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/brinks/](https://apis.io/providers/brinks/)** — or go straight to one of the APIs or properties below.
 
-### Digital Platform
-- **24SEVEN ACCESS** - Customer portal (customerportal.brinksinc.com) for tracking deposits, ordering change, and managing operations via mobile and desktop
+### APIs (1)
 
-### Financial Products
-- **Brink's Armored Account** - Secured payment processing
-- **Brink's Money/Paycard** - Employee payment solutions
+- [Brink's 24SEVEN ACCESS Portal](https://apis.io/apis/brinks/customer-portal-api/) — The 24SEVEN ACCESS customer portal enables businesses to digitally manage Brink's cash management services including tracking cash deposits, ordering…
 
-## Industries Served
+### Published properties
 
-- Retail locations and enterprise retailers
-- Restaurants and entertainment venues
-- Financial institutions and branch banking
-- International businesses (diamonds, jewelry, electronics, pharmaceuticals, precious metals)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Links
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Brinks Domain Security](https://apis.io/security/brinks/brinks-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Brinks Plans Pricing](https://apis.io/plans/brinks/brinks-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Brinks Rate Limits](https://apis.io/rate-limits/brinks/brinks-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Brinks Finops](https://apis.io/finops/brinks/brinks-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://us.brinks.com)
-- [Customer Portal](https://customerportal.brinksinc.com)
-- [Investor Relations](https://investors.brinks.com)
+- [Pricing](https://blubeempayments.com/the-basics/pricing)
+- [Support](https://us.brinks.com/contact)
+- [Blog](https://us.brinks.com/insights)
+- [Terms of service](https://us.brinks.com/terms-of-use)
+- [Privacy policy](https://us.brinks.com/privacy-policy)
+- [GitHub](https://github.com/brinks-incorporated)
+
+## API Evangelist rating
+
+**Kin Score 21.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 59.2 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/brinks/](https://apis.io/providers/brinks/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Brinks: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/brinks/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
